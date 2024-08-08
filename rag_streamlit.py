@@ -21,11 +21,12 @@ from langchain.memory import StreamlitChatMessageHistory
 
 def main():
     st.set_page_config(
-        page_title="Law ",
+        page_title="Hyundai Motor Company - Motor Vehicle Law ",
         page_icon=":scales:"
     )
 
     st.title("_Law Data :blue[QA Chatbot]_ :scales:")
+    st.header("Hyundai Motor Company & Handong Grobal University", divider = "blue")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
