@@ -26,7 +26,7 @@ def main():
     )
 
     st.title("_Law Data :blue[QA Chatbot]_ :scales:")
-    st.header("Hyundai Motor Company & Handong Grobal University", divider = "blue")
+    st.markdown("Hyundai Motor Company & Handong Grobal University")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
