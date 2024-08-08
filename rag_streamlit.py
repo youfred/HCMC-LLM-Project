@@ -21,11 +21,11 @@ from langchain.memory import StreamlitChatMessageHistory
 
 def main():
     st.set_page_config(
-        page_title="DirChat",
-        page_icon=":books:"
+        page_title="Law ",
+        page_icon=":scales:"
     )
 
-    st.title("_Private Data :red[QA Chat]_ :books:")
+    st.title("_Law Data :blue[QA Chatbot]_ :scales:")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
@@ -53,7 +53,7 @@ def main():
         st.session_state.processComplete = True
 
     if 'messages' not in st.session_state:
-        st.session_state['messages'] = [{"role": "assistant", "content": "안녕하세요! 주어진 문서에 대해 궁금하신 것이 있으면 언제든 물어봐주세요!"}]
+        st.session_state['messages'] = [{"role": "assistant", "content": "안녕하세요! UN ECE 법률 문서에 대해 궁금하신 것이 있으면 언제든 물어봐주세요!"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
