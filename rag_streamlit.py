@@ -19,14 +19,21 @@ from langchain.vectorstores import FAISS
 from langchain.callbacks import get_openai_callback
 from langchain.memory import StreamlitChatMessageHistory
 
+Hyundai_logo = "images/Hyundai_logo.png"
+
 def main():
     st.set_page_config(
         page_title="Hyundai Motor Company - Motor Vehicle Law ",
         page_icon=":scales:"
     )
 
-    st.title("_Law Data :blue[QA Chatbot]_ :scales:")
+    st.title("_Hyundai Motor - Motor Vehicle Law Data_ :blue[QA Chatbot] :scales:")
     st.markdown("Hyundai Motor Company & Handong Grobal University")
+
+    st.logo(
+        link= "https://bcd-team-project-swrblaswjkh64nyv8rjqxy.streamlit.app/",
+        icon_image=Hyundai_logo
+    )
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
