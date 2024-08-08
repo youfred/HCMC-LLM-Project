@@ -31,6 +31,7 @@ def main():
     st.markdown("Hyundai Motor Company & Handong Grobal University")
 
     st.logo(
+        Hyundai_logo,
         link= "https://bcd-team-project-swrblaswjkh64nyv8rjqxy.streamlit.app/",
         icon_image=Hyundai_logo
     )
