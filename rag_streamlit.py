@@ -24,12 +24,13 @@ Hyundai_logo = "images/Hyundai_logo.png"
 def main():
     st.set_page_config(
         page_title="Hyundai Motor Company - Motor Vehicle Law ",
-        page_icon=":scales:"
+        page_icon=Hyundai_logo
     )
 
     st.title("_Hyundai Motor - Motor Vehicle Law Data_ :blue[QA Chatbot] :scales:")
     st.markdown("Hyundai Motor Company & Handong Grobal University")
-
+    st.markdown("Place your legal documents in the space in the sidebar. Enter your OpenAI API Key below it and press Process!")
+    
     st.logo(
         Hyundai_logo,
         link= "https://bcd-team-project-swrblaswjkh64nyv8rjqxy.streamlit.app/",
@@ -62,7 +63,7 @@ def main():
         st.session_state.processComplete = True
 
     if 'messages' not in st.session_state:
-        st.session_state['messages'] = [{"role": "assistant", "content": "안녕하세요! UN ECE 법률 문서에 대해 궁금하신 것이 있으면 언제든 물어봐주세요!"}]
+        st.session_state['messages'] = [{"role": "assistant", "content": "Hi! If you have any questions about a given legal document, feel free to ask!"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -71,7 +72,7 @@ def main():
     history = StreamlitChatMessageHistory(key="chat_messages")
 
     # Chat logic
-    if query := st.chat_input("질문을 입력해주세요."):
+    if query := st.chat_input("Please enter your question."):
         st.session_state.messages.append({"role": "user", "content": query})
 
         with st.chat_message("user"):
