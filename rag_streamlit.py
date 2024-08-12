@@ -20,6 +20,7 @@ from langchain.callbacks import get_openai_callback
 from langchain.memory import StreamlitChatMessageHistory
 
 Hyundai_logo = "images/Hyundai_logo.png"
+sidebar_logo = "images/현대자동차로고_가로.png"
 
 def main():
     st.set_page_config(
@@ -27,12 +28,12 @@ def main():
         page_icon=Hyundai_logo
     )
 
-    st.title("_Hyundai Motor - Motor Vehicle Law Data_ :blue[QA Chatbot] :scales:")
+    st.title("_:blue[Hyundai Motor]_ - Motor Vehicle Law Data :blue[QA Chatbot] :scales:")
     st.markdown("Hyundai Motor Company & Handong Grobal University")
     st.markdown("Place your legal documents in the space in the sidebar. Enter your OpenAI API Key below it and press Process!")
     
     st.logo(
-        Hyundai_logo,
+        sidebar_logo,
         link= "https://bcd-team-project-swrblaswjkh64nyv8rjqxy.streamlit.app/",
         icon_image=Hyundai_logo
     )
@@ -61,6 +62,7 @@ def main():
 
         st.session_state.conversation = get_conversation_chain(vectorstore, openai_api_key)
         st.session_state.processComplete = True
+        
 
     if 'messages' not in st.session_state:
         st.session_state['messages'] = [{"role": "assistant", "content": "Hi! If you have any questions about a given legal document, feel free to ask!"}]
