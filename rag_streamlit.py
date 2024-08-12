@@ -21,15 +21,12 @@ from langchain.memory import StreamlitChatMessageHistory
 
 # code related logo
 Hyundai_logo = "images/Hyundai_logo.png"
-horizontal_logo = "images/현대자동차로고_가로.png"
-options = [horizontal_logo, Hyundai_logo]
+horizontal_logo = "images/Hyundai_logo_horizen.png"
 
 def main():
-    sidebar_logo = st.selectbox("Sidebar logo", options, 0)
-    main_body_logo = st.selectbox("Main body logo", options, 1)
     st.set_page_config(
         page_title="Hyundai Motor Company - Motor Vehicle Law ",
-        page_icon=main_body_logo
+        page_icon=Hyundai_logo
     )
 
     st.title("_:blue[Hyundai Motor]_ - Motor Vehicle Law Data :blue[QA Chatbot] :scales:")
@@ -37,8 +34,8 @@ def main():
     
     # sidebar
     st.logo(
-        sidebar_logo,
-        icon_image=main_body_logo
+        horizontal_logo,
+        icon_image=Hyundai_logo
     )
     st.sidebar.markdown("Place your legal documents in the space in the sidebar. Enter your OpenAI API Key below it and press Process!")
 
