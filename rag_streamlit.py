@@ -19,24 +19,29 @@ from langchain.vectorstores import FAISS
 from langchain.callbacks import get_openai_callback
 from langchain.memory import StreamlitChatMessageHistory
 
+# code related logo
 Hyundai_logo = "images/Hyundai_logo.png"
-sidebar_logo = "images/현대자동차로고_가로.png"
+horizontal_logo = "images/현대자동차로고_가로.png"
+options = [horizontal_logo, Hyundai_logo]
 
 def main():
+    sidebar_logo = st.selectbox("Sidebar logo", options, 0)
+    main_body_logo = st.selectbox("Main body logo", options, 1)
     st.set_page_config(
         page_title="Hyundai Motor Company - Motor Vehicle Law ",
-        page_icon=Hyundai_logo
+        page_icon=main_body_logo
     )
 
     st.title("_:blue[Hyundai Motor]_ - Motor Vehicle Law Data :blue[QA Chatbot] :scales:")
     st.markdown("Hyundai Motor Company & Handong Grobal University")
-    st.markdown("Place your legal documents in the space in the sidebar. Enter your OpenAI API Key below it and press Process!")
     
+    # sidebar
     st.logo(
         sidebar_logo,
-        link= "https://bcd-team-project-swrblaswjkh64nyv8rjqxy.streamlit.app/",
-        icon_image=Hyundai_logo
+        icon_image=main_body_logo
     )
+    st.sidebar.markdown("Place your legal documents in the space in the sidebar. Enter your OpenAI API Key below it and press Process!")
+
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
