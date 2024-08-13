@@ -1,4 +1,4 @@
-# bcd-team-project
+# HCMC-LLM-Project
 
 
 | name    | student ID | GitHub URL                                   |
